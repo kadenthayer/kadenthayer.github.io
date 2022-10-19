@@ -346,15 +346,6 @@ section {
   font-weight: 600;
 }
 
-.certs #certs-head {
-  color: #27AE60;
-  font-size: 1.1rem;
-}
-
-.certs #certs-head2 {
-  color: var(--color-grey-3);
-}
-
 .timeline .certs-item h5 span {
   color: var(--color-grey-2);
   font-weight: 500;
