@@ -221,6 +221,7 @@ section {
         p {
             margin: 1.5rem 0;
             line-height: 2rem;
+            text-align: center;
         }
     }
 }
@@ -290,11 +291,13 @@ section {
             line-height: 2rem;
             padding: 1rem;
             color: var(--color-grey-1);
+            text-align: center;
         }
 
         h4 {
             font-size: 2rem;
             text-transform: uppercase;
+            text-align: center;
         }
     }
 }
@@ -697,7 +700,7 @@ section {
     /*Independed components*/
     .btn-con {
         display: flex;
-        align-self: flex-start;
+        align-self: center;
     }
 
     .main-btn {

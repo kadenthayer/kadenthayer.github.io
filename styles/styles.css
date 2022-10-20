@@ -169,6 +169,11 @@ section {
   position: relative;
 }
 
+.header-content .left-about .btn-con {
+  display: flex;
+  align-items: center;
+}
+
 .header-content .left-header .h-shape {
   transition: all 0.4s ease-in-out;
   width: 65%;
@@ -234,6 +239,7 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
+  padding-right: 3rem;
 }
 
 .about-container .right-about .about-item {
@@ -282,7 +288,7 @@ section {
 }
 
 .about-container .left-about {
-  padding-right: 2rem;
+  padding-right: 1rem;
   width: 400px;
 }
 
@@ -295,6 +301,12 @@ section {
 .about-container .left-about h4 {
   font-size: 2rem;
   text-transform: uppercase;
+  text-align: center;
+}
+
+.about-container .left-about .btn-con {
+  display: flex;
+  justify-content: center;
 }
 
 /*Timeline*/
@@ -684,7 +696,8 @@ section {
 /*Independed components*/
 .btn-con {
   display: flex;
-  align-self: flex-start;
+  align-self: center;
+
 }
 
 .main-btn {
@@ -764,11 +777,13 @@ section {
 
 .about-container .left-about p {
   padding-left: 0;
+  text-align: center;
 }
 
 @media screen and (max-width: 600px) {
   header {
     padding: 0 !important;
+    text-align: center;
   }
 
   .theme-btn {
@@ -833,6 +848,7 @@ section {
 
   .about-container .left-about p {
     padding-left: 0;
+    text-align: center;
   }
 
   .timeline {
