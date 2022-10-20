@@ -750,6 +750,7 @@ section {
 
     .main-title {
         text-align: center;
+        padding-top: 3rem;
 
         h2 {
             position: relative;
@@ -763,14 +764,14 @@ section {
 
             .bg-text {
                 position: absolute;
-                top: 50%;
+                top: 35%;
                 left: 50%;
                 color: var(--color-grey-5);
                 transition: all .4s ease-in-out;
                 z-index: -1;
                 transform: translate(-50%, -50%);
                 font-weight: 800;
-                font-size: 6.3rem;
+                font-size: 3.55rem;
             }
         }
     }
