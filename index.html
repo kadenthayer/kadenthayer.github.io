@@ -35,25 +35,25 @@ h1,h2,h3,.nav,.btn,.tag,.meta,.role{font-family:var(--display)}
 
 /* nav */
 .nav{display:flex;justify-content:space-between;align-items:center;padding:28px 0;font-size:16px}
-.nav .name{font-weight:700;text-decoration:none;font-size:18px}
+.nav .name{font-weight:500;text-decoration:none;font-size:16px;color:var(--muted)}
 .nav ul{display:flex;gap:28px;list-style:none}
 .nav ul a{text-decoration:none;color:var(--muted)}
 .nav ul a:hover{color:var(--ink)}
 
 /* hero */
 .hero{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:end;padding:56px 0 72px}
-.hero h1{font-size:clamp(44px,7.4vw,92px);line-height:.98;letter-spacing:-.035em;font-weight:700;max-width:12ch;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero h1{font-size:clamp(52px,9vw,112px);line-height:.92;letter-spacing:-.045em;font-weight:700;max-width:8ch;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 .hero p.lede{margin-top:28px;max-width:56ch;font-size:20px;color:var(--muted);animation:rise .9s .15s cubic-bezier(.2,.7,.2,1) both}
 .hero .actions{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;animation:rise .9s .25s cubic-bezier(.2,.7,.2,1) both}
-.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:2px solid var(--ink)}
+.btn{display:inline-block;padding:12px 20px;border-radius:6px;font-weight:600;font-size:16px;text-decoration:none;border:2px solid var(--ink)}
 .btn.primary{background:var(--ink);color:var(--paper)}
 .btn.primary:hover{background:var(--green);border-color:var(--green);color:#fff}
 .btn:not(.primary):hover{border-color:var(--green)}
 .portrait{position:relative}
-.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:150px 150px 8px 8px;display:block;filter:saturate(.9)}
-.closed{position:absolute;left:-28px;bottom:28px;background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-family:var(--display);box-shadow:0 10px 30px -12px rgba(20,33,43,.35)}
-.closed b{display:block;font-size:26px;letter-spacing:-.02em;color:var(--green)}
-.closed span{font-size:14px;color:var(--muted)}
+.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:150px 150px 8px 8px;display:block;filter:saturate(.9)}
+.closed{position:absolute;left:-28px;bottom:28px;background:var(--surface);border:1px solid var(--ink);border-radius:8px;padding:12px 16px;font-family:var(--display);max-width:220px}
+.closed b{display:block;font-size:22px;letter-spacing:-.02em;color:var(--green);line-height:1.15}
+.closed span{display:block;font-size:14px;line-height:1.35;color:var(--muted);margin-top:4px}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
 /* sections */
@@ -113,7 +113,7 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:15px;font-family:var(--d
 <body>
 <div class="wrap">
   <nav class="nav" aria-label="Main">
-    <a class="name" href="#top">Kaden Thayer</a>
+    <a class="name" href="#top">kadenthayer.github.io</a>
     <ul>
       <li class="hide-sm"><a href="#built">What I've built</a></li>
       <li class="hide-sm"><a href="#experience">Experience</a></li>
@@ -123,8 +123,8 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:15px;font-family:var(--d
 
   <header class="hero" id="top">
     <div>
-      <h1>I sell technology, and I know how it's built.</h1>
-      <p class="lede">I'm an inside sales account executive in Austin, managing commercial and mid-market IT accounts. Before sales, I supported enterprise e-commerce platforms and built websites, brands and campaigns for clients. I've also co-founded a SaaS company, so I know what buyers go through when they evaluate software.</p>
+      <h1>Kaden Thayer</h1>
+      <p class="lede">Account executive in Austin, selling IT to commercial and mid-market companies. Along the way, I've co-founded a SaaS company and an apparel brand, and built 25+ websites.</p>
       <div class="actions">
         <a class="btn primary" href="Kaden_Thayer_Resume.pdf" target="_blank" rel="noopener">View resume</a>
         <a class="btn" href="#built">See what I've built</a>
@@ -132,7 +132,7 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:15px;font-family:var(--d
     </div>
     <div class="portrait">
       <img src="photos/kaden.jpg" alt="Portrait of Kaden Thayer" width="800" height="1000">
-      <div class="closed"><b>$670k+</b><span>new-customer revenue in 2025</span></div>
+      <div class="closed"><b>Co-founder</b><span>Tiksoo, an IVR monitoring SaaS</span></div>
     </div>
   </header>
 
@@ -148,7 +148,7 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:15px;font-family:var(--d
         <p class="role">Co-founder</p>
       </div>
       <div>
-        <p>A SaaS product that monitors IVR and phone systems. It places automated test calls and alerts teams the moment a call flow breaks, before their customers notice. I work across product and go-to-market: codebase reviews, UX planning, brand and LinkedIn strategy.</p>
+        <p>We built a SaaS product that monitors IVR and phone systems. It places automated test calls and alerts teams the moment a call flow breaks, before their customers notice. We're a small team, so everyone works across product and go-to-market: codebase reviews, UX planning, brand and LinkedIn strategy.</p>
         <ul class="tags"><li class="tag">SaaS</li><li class="tag">Product</li><li class="tag">Go-to-market</li></ul>
         <a class="link" href="https://tiksoo.com" target="_blank" rel="noopener">Visit tiksoo.com</a>
       </div>
@@ -172,7 +172,7 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:15px;font-family:var(--d
         <p class="role">Co-founder</p>
       </div>
       <div>
-        <p>A golf apparel brand running on BigCommerce. I built a giveaway with raffle-ticket multipliers to grow the email list, set up Klaviyo email flows, ran Meta ads, and used analytics data to diagnose where the store was losing conversions.</p>
+        <p>We started a golf apparel brand on BigCommerce. To grow the email list, we built a giveaway with raffle-ticket multipliers, now in its second round. We also set up Klaviyo email flows, ran Meta ads, and used analytics data to find where the store was losing conversions.</p>
         <ul class="tags"><li class="tag">E-commerce</li><li class="tag">Email</li><li class="tag">Paid social</li></ul>
         <a class="link" href="https://begreatgolf.com" target="_blank" rel="noopener">Visit begreatgolf.com</a>
       </div>
@@ -245,7 +245,7 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:15px;font-family:var(--d
   </section>
 
   <section class="contact" id="contact" aria-labelledby="contact-h">
-    <h2 id="contact-h">Let's talk about what I can sell for you.</h2>
+    <h2 id="contact-h">Get in touch</h2>
     <div class="actions">
       <a class="btn primary" href="mailto:kadenthayer@gmail.com">Email me</a>
       <a class="btn" href="https://www.linkedin.com/in/kadenthayer/" target="_blank" rel="noopener">LinkedIn</a>
