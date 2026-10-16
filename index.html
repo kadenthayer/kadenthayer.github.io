@@ -1,565 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaden Thayer</title>
+<meta name="description" content="Kaden Thayer, inside sales account executive in Austin, TX, who also builds software, websites and brands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF1F3;
+  --surface:#FFFFFF;
+  --ink:#14212B;
+  --muted:#52606B;
+  --rule:#C9D2D9;
+  --green:#1E6B57;
+  --green-soft:#DCEBE5;
+  --display:"Familjen Grotesk",system-ui,sans-serif;
+  --body:"Source Serif 4",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#121B22;--surface:#18242D;--ink:#E7ECEF;--muted:#9AA8B2;--rule:#2C3A45;--green:#6FC2A6;--green-soft:#1C3530;}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--green);text-underline-offset:3px;text-decoration-thickness:2px}
+a:hover{color:var(--green)}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3,.nav,.btn,.tag,.meta,.role{font-family:var(--display)}
+
+/* nav */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:28px 0;font-size:16px}
+.nav .name{font-weight:700;text-decoration:none;font-size:18px}
+.nav ul{display:flex;gap:28px;list-style:none}
+.nav ul a{text-decoration:none;color:var(--muted)}
+.nav ul a:hover{color:var(--ink)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:end;padding:56px 0 72px}
+.hero h1{font-size:clamp(44px,7.4vw,92px);line-height:.98;letter-spacing:-.035em;font-weight:700;max-width:12ch;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero p.lede{margin-top:28px;max-width:56ch;font-size:20px;color:var(--muted);animation:rise .9s .15s cubic-bezier(.2,.7,.2,1) both}
+.hero .actions{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;animation:rise .9s .25s cubic-bezier(.2,.7,.2,1) both}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:2px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:var(--green);border-color:var(--green);color:#fff}
+.btn:not(.primary):hover{border-color:var(--green)}
+.portrait{position:relative}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:150px 150px 8px 8px;display:block;filter:saturate(.9)}
+.closed{position:absolute;left:-28px;bottom:28px;background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-family:var(--display);box-shadow:0 10px 30px -12px rgba(20,33,43,.35)}
+.closed b{display:block;font-size:26px;letter-spacing:-.02em;color:var(--green)}
+.closed span{font-size:14px;color:var(--muted)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* sections */
+section{padding:72px 0;border-top:1px solid var(--rule)}
+.head{display:grid;grid-template-columns:260px 1fr;gap:40px;margin-bottom:40px}
+.head h2{font-size:32px;letter-spacing:-.02em;line-height:1.1}
+.head p{color:var(--muted);max-width:60ch}
+
+/* ventures */
+.venture{display:grid;grid-template-columns:260px 1fr;gap:40px;padding:32px 0;border-top:1px solid var(--rule)}
+.venture:first-of-type{border-top:0;padding-top:0}
+.venture h3{font-size:28px;letter-spacing:-.02em;line-height:1.1}
+.venture .role{margin-top:6px;color:var(--green);font-weight:600;font-size:16px}
+.venture p{max-width:60ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;list-style:none}
+.tag{font-size:14px;padding:4px 10px;border-radius:6px;background:var(--green-soft);color:var(--ink)}
+.venture .link{display:inline-block;margin-top:14px;font-family:var(--display);font-weight:600;font-size:16px}
+.venture.lead h3{font-size:40px}
+
+/* clients */
+.clients{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);border-radius:12px;overflow:hidden;background:var(--surface)}
+.clients a{padding:22px 20px;text-decoration:none;font-family:var(--display);font-weight:600;font-size:17px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.clients a:nth-child(4n){border-right:0}
+.clients a:nth-last-child(-n+4){border-bottom:0}
+.clients a small{display:block;font-weight:400;color:var(--muted);font-size:14px;margin-top:2px}
+.clients a:hover{background:var(--green-soft);color:var(--ink)}
+
+/* timeline */
+.timeline{list-style:none}
+.timeline li{display:grid;grid-template-columns:260px 1fr;gap:40px;padding:22px 0;border-top:1px solid var(--rule)}
+.timeline li:first-child{border-top:0;padding-top:0}
+.timeline .meta{color:var(--muted);font-size:16px}
+.timeline h3{font-size:21px;letter-spacing:-.01em}
+.timeline h3 span{font-weight:400;color:var(--muted)}
+.timeline p{margin-top:6px;max-width:60ch}
+
+/* contact */
+.contact h2{font-size:clamp(36px,5.4vw,64px);letter-spacing:-.03em;line-height:1;max-width:14ch}
+.contact .actions{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+footer{padding:40px 0 56px;color:var(--muted);font-size:15px;font-family:var(--display)}
+
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr;gap:40px;padding-top:24px}
+  .portrait{max-width:220px}
+  .closed{left:auto;right:-12px}
+  .head,.venture,.timeline li{grid-template-columns:1fr;gap:10px}
+  .clients{grid-template-columns:1fr 1fr}
+  .clients a:nth-child(4n){border-right:1px solid var(--rule)}
+  .clients a:nth-child(2n){border-right:0}
+  .clients a:nth-last-child(-n+4){border-bottom:1px solid var(--rule)}
+  .clients a:nth-last-child(-n+2){border-bottom:0}
+  .nav ul{gap:18px}
+  .nav ul li.hide-sm{display:none}
+}
+</style>
 </head>
+<body>
+<div class="wrap">
+  <nav class="nav" aria-label="Main">
+    <a class="name" href="#top">Kaden Thayer</a>
+    <ul>
+      <li class="hide-sm"><a href="#built">What I've built</a></li>
+      <li class="hide-sm"><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<body class="main-content">
-    <header class="container header active" id="home">
-        <div class="header-content">
-            <div class="left-header">
-                <div class="h-shape"></div>
-                <div class="image">
-                    <img src="photos/kadenHeadshot.png" alt="">
-                </div>
-            </div>
-            <div class="right-header" style="text-align: center;">
-                <h1 class="name">
-                    Hi, I'm <span>Kaden Thayer.</span>
-                </h1>
-                <p>
-                    I'm here to help you build a better online presence for your brand.
-                    I'll help you tune-up your branding with sleek, modern designs and propel your growth
-                    through a variety of cutting-edge social media marketing strategies.
-                </p>
-                <div class="btn-con">
-                    <a href="https://drive.google.com/file/d/1pmUAFs8UVZU2IzheVtA9-0P4qnjCrEM-/view?usp=sharing"
-                        class="main-btn" target="_blank" rel="noopener noreferrer">
-                        <span class="btn-text">Download CV</span>
-                        <span class="btn-icon"><i class="fas fa-download"></i></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <section class="container about" id="about">
-            <div class="main-title">
-                <h2>About <span>Me</span><span class="bg-text">About Me</span></h2>
-            </div>
-            <div class="about-container">
-                <div class="left-about">
-                    <h4>Background</h4>
-                    <p>
-                        My name is Kaden, and I am a freelance Web Developer and Digital Marketing Strategist.
-                        I am currently based in Austin, TX and work with local businesses as well as clients from
-                        around the world. I have a B.B.A. in Marketing from Texas State University and am self-taught in
-                        a variety of programming languanges.
-                    </p>
-                    <div class="btn-con">
-                        <a href="https://drive.google.com/file/d/1RRf5WbELSASn_jj1L8_pRDDBaGXZdlb6/view?usp=sharing"
-                            class="main-btn" target="_blank" rel="noopener noreferrer">
-                            <span class="btn-text">Download CV</span>
-                            <span class="btn-icon"><i class="fas fa-download"></i></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="right-about">
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">Languages</p>
-                            <p class="small-text">- HTML<br />- CSS<br />- JavaScript<br />- React<br />- Rust</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">2+</p>
-                            <p class="small-text">Years <br /> Web Development experience</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">Skills</p>
-                            <p class="small-text">- Microsoft 365<br />- Adobe Suite<br />- Wordpress<br />-
-                                Webflow<br />- Figma</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">4+</p>
-                            <p class="small-text">Years <br /> Digital Marketing Experience</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="about-stats">
-                <h4 class="stat-title">My Certifications</h4>
-                <div class="certs">
-                    <div class="certs-item">
-                        <div class="tl-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="tl-duration">2022</p>
-                        <h5 id="certs-head" style="font-size: 1.1rem;">Google Ads Search</h5>
-                        <span id="certs-head2" style="color: grey;">- Google</span><br>
-                        <p>
-                            Demonstrates mastery of building and optimizing Google Search campaigns.
-                        </p>
-                    </div>
-                    <div class="certs-item">
-                        <div class="tl-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="tl-duration">2022</p>
-                        <h5 id="certs-head" style="font-size: 1.1rem;">Google Analytics Individual Qualification</h5>
-                        <span id="certs-head2" style="color: grey;">- Google</span><br>
-                        <p>
-                            Demonstrates mastery of advnanced Google Analytics concepts. </p>
-                    </div>
-                    <div class="certs-item">
-                        <div class="tl-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="tl-duration">2022</p>
-                        <h5 id="certs-head" style="font-size: 1.1rem;">The Web Developer Bootcamp</h5>
-                        <span id="certs-head2" style="color: grey;">- Colt Steele</span><br>
-                        <p>
-                            Full-Stack Web Development Bootcamp. <a
-                                href="https://www.udemy.com/course/the-web-developer-bootcamp/learn/lecture/21991056?start=75#content"
-                                style="color: #27AE60;">Link Here</a>
-                        </p>
-                    </div>
-                    <div class="certs-item">
-                        <div class="tl-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="tl-duration">2022</p>
-                        <h5 id="certs-head" style="font-size: 1.1rem;">Solana Blockchain Developer Bootcamp</h5>
-                        <span id="certs-head2" style="color: grey;">- Arjun</span><br>
-                        <p>
-                            Teaches how to build Solana DApps, NFTs, DeFi, and more. <a
-                                href="https://www.udemy.com/course/solana-developer/learn/lecture/32542570?start=15#overview"
-                                style="color: #27AE60;">Link
-                                Here</a>
-                        </p>
-                    </div>
-                </div>
-            </div> -->
-            <hr>
-            <h4 class="stat-title">My Timeline</h4>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2021 - Present</p>
-                    <h5>Freelancer<span></span></h5>
-                    <p>
-                        Worked with projects and companies to create websites, branding/marketing content, and marketing
-                        campaigns. </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2021</p>
-                    <h5>Digital Marketing Intern<span> - ROW Marketing</span></h5>
-                    <p>
-                        Managed the social media accounts of three different businesses while creating 50+ custom social
-                        media posts as well as 10+ custom SEO articles for their blogs.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2019-2021</p>
-                    <h5>Server<span> - County Line BBQ</span></h5>
-                    <p>
-                        Improved problem-solving skills and delegation tactics while working in a fast-paced
-                        environment.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2014-2019</p>
-                    <h5>Rainwater Technician<span> - Lakota Rainwater</span></h5>
-                    <p>
-                        Improved problem-solving skills and delegation tactics while working in a fast-paced
-                        environment.
-
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2014-2016</p>
-                    <h5>Server<span> - Hill Country Ranch Pizzeria</span></h5>
-                    <p>
-                        Developed customer service and conflict management skills as well as experience training over 10
-                        employees. </p>
-                </div>
-            </div>
-        </section>
-        <section class="container" id="portfolio">
-            <div class="main-title">
-                <h2>My <span>Portfolio</span><span class="bg-text">My Portfolio</span></h2>
-            </div>
-            <p class="port-text">
-                Here are some of the companies I have worked with
-            </p>
-            <div class="btn-con" style="display: flex; justify-content: center">
-                <a href="https://portfolio-eb85d4.webflow.io/" class="main-btn" target="_blank"
-                    rel="noopener noreferrer">
-                    <span class="btn-text">See Work</span>
-                    <span class="btn-icon"><i class="fas fa-eye"></i></span>
-                </a>
-            </div>
-            <div class="portfolios">
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="photos/bcsLogo.png" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Bitcoin Sock Club</h3>
-                        <div class="icons">
-                            <a href="https://bitcoinsockclub.com/" class="icon">
-                                <i class="fab fa-wordpress"></i>
-                            </a>
-                            <a href="https://twitter.com/BitcoinSockClub" class="icon">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="https://instagram.com/BitcoinSockClub" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="photos/reederGraphic.png" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Reeder Concrete</h3>
-                        <div class="icons">
-                            <a href="https://www.reederconcrete.com/" class="icon">
-                                <i class="fab fa-wordpress"></i>
-                            </a>
-                            <a href="https://www.facebook.com/people/Reeder-Concrete-Inc/100063537583498/" class="icon">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/company/reeder-concrete-inc" class="icon">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="photos/digitalprecisionGraphic.png" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Digital Precision</h3>
-                        <div class="icons">
-                            <a href="https://www.digitalprecision.com/" class="icon">
-                                <i class="fab fa-wordpress"></i>
-                            </a>
-                            <a href="https://www.facebook.com/people/Digital-Precision/100063180403033/" class="icon">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="https://www.instagram.com/digitalprecision/?hl=en" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="photos/kairo_logo_2.png" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Kairo Supply</h3>
-                        <div class="icons">
-                            <a href="https://twitter.com/KairoSupply" class="icon">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="https://medium.com/@kairosupply" class="icon">
-                                <i class="fab fa-medium"></i>
-                            </a>
-                            <a href="https://instagram.com/thekairosupply?igshid=ZjA0NjI3M2I=" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="photos/alumareelGraphic.png" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>AlumaReel USA</h3>
-                        <div class="icons">
-                            <a href="https://alumareelusa.com/" class="icon">
-                                <i class="fab fa-wordpress"></i>
-                            </a>
-                            <a href="https://www.facebook.com/alumareelusa/" class="icon">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="https://www.instagram.com/alumareelusa/" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="photos/within_logo.png" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Within</h3>
-                        <div class="icons">
-                            <a href="https://within.center" class="icon">
-                                <i class="fab fa-wordpress"></i>
-                            </a>
-                            <a href="https://www.facebook.com/withincenter/" class="icon">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="https://www.intagram.com/within.center/" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="photos/opmGraphic.png" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Orange Pill Media</h3>
-                        <div class="icons">
-                            <a href="https://orangepillmedia.com" class="icon">
-                                <i class="fab fa-wordpress"></i>
-                            </a>
-                            <a href="https://www.twitter.com/orangepillmedia" class="icon">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="photos/tti_logo.png" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>TikTok Insights</h3>
-                        <div class="icons">
-                            <a href="https://tiktokinsights.com" class="icon">
-                                <i class="fab fa-wordpress"></i>
-                            </a>
-                            <a href="https://www.twitter.com/TikTok_Insights" class="icon">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="https://www.instagram.com/tiktokinsights_official" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="main-title">
-                <h2>My <span>Projects</span><span class="bg-text">My Projects</span></h2>
-            </div>
-            <p class="port-text">
-                Here is some of my work that I've done in various programming languages.
-            </p> -->
-        </section>
-        <section class="container" id="blogs">
-            <div class="blogs-content">
-                <div class="main-title">
-                    <h2>My <span>Services</span><span class="bg-text">My Services</span></h2>
-                </div>
-                <div class="blogs">
-                    <div class="blog">
-                        <img src="photos/webdesignGraphic.png" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                Website Development & Design
-                            </h4>
-                            <p>
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="photos/socialmediamanagementGraphic.png" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                Social Media Management & Ad Campaigns
-                            </h4>
-                            <p>
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="photos/seosemGraphic.png" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                SEO & SEM
-                            </h4>
-                            <p>
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="photos/brandingGraphic.jpeg" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                Branding & Graphic Design
-                            </h4>
-                            <p>
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="photos/contentwritingGraphic.png" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                Content Writing
-                            </h4>
-                            <p>
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="photos/influencermarketingGraphic.jpeg" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                Influencer Marketing & Management
-                            </h4>
-                            <p>
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="container contact" id="contact">
-            <div class="contact-container">
-                <div class="main-title">
-                    <h2>Contact <span>Me</span><span class="bg-text">Contact Me</span></h2>
-                </div>
-                <div class="contact-content-con">
-                    <div class="left-contact">
-                        <h4>Contact me here</h4>
-                        <p>
-                            Feel free to contact me here or via any of my social media accounts
-                        </p>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Location</span>
-                                </div>
-                                <p style="color: #27AE60">
-                                    Texas, United States
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>Email</span>
-                                </div>
-                                <p style="color: #27AE60">
-                                    <span>kadenthayer@gmail.com</span>
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-user-graduate"></i>
-                                    <span>Education</span>
-                                </div>
-                                <p style="color: #27AE60">
-                                    <span>B.B.A. in Marketing</span>
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-user-graduate"></i>
-                                    <span>Mobile Number</span>
-                                </div>
-                                <p style="color: #27AE60">
-                                    <span>(512)210-4930</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="contact-icons">
-                            <div class="contact-icon">
-                                <a href="https://github.com/kadenthayer" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/kadenthayer/" target="_blank">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="right-contact">
-                        <form action="" class="contact-form">
-                            <div class="input-control i-c-2">
-                                <input type="text" required placeholder="YOUR NAME">
-                                <input type="email" required placeholder="YOUR EMAIL">
-                            </div>
-                            <div class="input-control">
-                                <input type="text" required placeholder="ENTER SUBJECT">
-                            </div>
-                            <div class="input-control">
-                                <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
-                            </div>
-                            <div class="submit-btn">
-                                <a href="https://drive.google.com/file/d/1RRf5WbELSASn_jj1L8_pRDDBaGXZdlb6/view?usp=sharing"
-                                    class="main-btn" target="_blank" rel="noopener noreferrer">
-                                    <span class="btn-text">Download CV</span>
-                                    <span class="btn-icon"><i class="fas fa-download"></i></span>
-                                </a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <div class="controls">
-        <div class="control active-btn" data-id="home">
-            <i class="fas fa-home"></i>
-        </div>
-        <div class="control" data-id="about">
-            <i class="fas fa-user"></i>
-        </div>
-        <div class="control" data-id="portfolio">
-            <i class="fas fa-briefcase"></i>
-        </div>
-        <div class="control" data-id="blogs">
-            <i class="far fa-newspaper"></i>
-        </div>
-        <div class="control" data-id="contact">
-            <i class="fas fa-envelope-open"></i>
-        </div>
+  <header class="hero" id="top">
+    <div>
+      <h1>I sell technology, and I know how it's built.</h1>
+      <p class="lede">I'm an inside sales account executive in Austin, managing commercial and mid-market IT accounts. Before sales, I supported enterprise e-commerce platforms and built websites, brands and campaigns for clients. I've also co-founded a SaaS company, so I know what buyers go through when they evaluate software.</p>
+      <div class="actions">
+        <a class="btn primary" href="Kaden_Thayer_Resume.pdf" target="_blank" rel="noopener">View resume</a>
+        <a class="btn" href="#built">See what I've built</a>
+      </div>
     </div>
-    <div class="theme-btn">
-        <i class="fas fa-adjust"></i>
+    <div class="portrait">
+      <img src="photos/kaden.jpg" alt="Portrait of Kaden Thayer" width="800" height="1000">
+      <div class="closed"><b>$670k+</b><span>new-customer revenue in 2025</span></div>
     </div>
-    <script src="app.js"></script>
+  </header>
+
+  <section id="built" aria-labelledby="built-h">
+    <div class="head">
+      <h2 id="built-h">What I've built</h2>
+      <p>Companies and products I've started or helped grow. Each one taught me something I now use with customers: how software gets built, how marketing turns into pipeline, and what makes someone buy.</p>
+    </div>
+
+    <article class="venture lead">
+      <div>
+        <h3>Tiksoo</h3>
+        <p class="role">Co-founder</p>
+      </div>
+      <div>
+        <p>A SaaS product that monitors IVR and phone systems. It places automated test calls and alerts teams the moment a call flow breaks, before their customers notice. I work across product and go-to-market: codebase reviews, UX planning, brand and LinkedIn strategy.</p>
+        <ul class="tags"><li class="tag">SaaS</li><li class="tag">Product</li><li class="tag">Go-to-market</li></ul>
+      </div>
+    </article>
+
+    <article class="venture">
+      <div>
+        <h3>Moksha Media</h3>
+        <p class="role">Founder</p>
+      </div>
+      <div>
+        <p>A digital marketing agency built around transparency. Clients get a live portal into their campaigns, and every engagement starts with the Clarity Score, a 0–100 audit of a brand's digital health that I designed. I built and deployed the site myself.</p>
+        <ul class="tags"><li class="tag">Agency</li><li class="tag">Web development</li><li class="tag">Audit tool</li></ul>
+        <a class="link" href="https://moksha.media" target="_blank" rel="noopener">Visit moksha.media</a>
+      </div>
+    </article>
+
+    <article class="venture">
+      <div>
+        <h3>Be Great Golf</h3>
+        <p class="role">Partner</p>
+      </div>
+      <div>
+        <p>A golf apparel brand running on BigCommerce. I built a giveaway with raffle-ticket multipliers to grow the email list, set up Klaviyo email flows, ran Meta ads, and used analytics data to diagnose where the store was losing conversions.</p>
+        <ul class="tags"><li class="tag">E-commerce</li><li class="tag">Email</li><li class="tag">Paid social</li></ul>
+        <a class="link" href="https://begreatgolf.com" target="_blank" rel="noopener">Visit begreatgolf.com</a>
+      </div>
+    </article>
+
+    <article class="venture">
+      <div>
+        <h3>Chakancha Tea</h3>
+        <p class="role">Volunteer, web and launch</p>
+      </div>
+      <div>
+        <p>Designed and launched the website for a Kenya-based tea farm's Kickstarter campaign, which beat its $20,000 goal.</p>
+        <ul class="tags"><li class="tag">Crowdfunding</li><li class="tag">Web design</li></ul>
+      </div>
+    </article>
+  </section>
+
+  <section aria-labelledby="clients-h">
+    <div class="head">
+      <h2 id="clients-h">Client work</h2>
+      <p>As a freelancer, I designed and ran 25+ websites, 100+ social campaigns and newsletters reaching 10,000+ subscribers. A few of the businesses I worked with:</p>
+    </div>
+    <div class="clients">
+      <a href="https://www.reederconcrete.com/" target="_blank" rel="noopener">Reeder Concrete<small>Construction</small></a>
+      <a href="https://www.digitalprecision.com/" target="_blank" rel="noopener">Digital Precision<small>Manufacturing</small></a>
+      <a href="https://alumareelusa.com/" target="_blank" rel="noopener">AlumaReel USA<small>Outdoor products</small></a>
+      <a href="https://within.center" target="_blank" rel="noopener">Within<small>Wellness</small></a>
+      <a href="https://bitcoinsockclub.com/" target="_blank" rel="noopener">Bitcoin Sock Club<small>Retail</small></a>
+      <a href="https://orangepillmedia.com" target="_blank" rel="noopener">Orange Pill Media<small>Media</small></a>
+      <a href="https://tiktokinsights.com" target="_blank" rel="noopener">TikTok Insights<small>Social media</small></a>
+      <a href="https://medium.com/@kairosupply" target="_blank" rel="noopener">Kairo Supply<small>Retail</small></a>
+    </div>
+  </section>
+
+  <section id="experience" aria-labelledby="exp-h">
+    <div class="head">
+      <h2 id="exp-h">Experience</h2>
+      <p>From marketing to technical support to sales, each role added a layer to how I work with customers.</p>
+    </div>
+    <ol class="timeline" reversed>
+      <li>
+        <p class="meta">May 2024 – present</p>
+        <div>
+          <h3>Inside Sales Account Executive <span>SHI</span></h3>
+          <p>Manage a portfolio of commercial and mid-market accounts across software licensing, SaaS, hardware and managed services. Converted 5 cold prospects into buying customers worth $670k+ in 2025.</p>
+        </div>
+      </li>
+      <li>
+        <p class="meta">Aug 2023 – May 2024</p>
+        <div>
+          <h3>Support Technician <span>BigCommerce</span></h3>
+          <p>Resolved complex issues on enterprise e-commerce sites: DNS, API integrations, customizations. Worked with product and engineering to escalate and fix hard problems.</p>
+        </div>
+      </li>
+      <li>
+        <p class="meta">Jul 2021 – Aug 2023</p>
+        <div>
+          <h3>Digital Marketing &amp; Web Development <span>Freelance</span></h3>
+          <p>Built websites on WordPress, Webflow and BigCommerce, and ran social, email and ad campaigns for businesses in Austin and beyond.</p>
+        </div>
+      </li>
+      <li>
+        <p class="meta">Jan – Jul 2021</p>
+        <div>
+          <h3>Digital Marketing Intern <span>ROW Marketing</span></h3>
+          <p>Managed social accounts for three businesses and wrote SEO articles for their blogs.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">Let's talk about what I can sell for you.</h2>
+    <div class="actions">
+      <a class="btn primary" href="mailto:kadenthayer@gmail.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/kadenthayer/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="Kaden_Thayer_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+    </div>
+  </section>
+
+  <footer>Based in Austin, Texas. B.B.A. in Marketing, Texas State University</footer>
+</div>
 </body>
-
 </html>
